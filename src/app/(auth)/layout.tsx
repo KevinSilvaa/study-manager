@@ -2,8 +2,16 @@ import { LanguageSwitcher } from "@/components/language-switcher";
 import Image from "next/image";
 import type { ReactNode } from "react";
 import authImageUrl from '../../../public/auth-image.png'
+import { auth } from "auth";
+import { redirect } from "next/navigation";
 
-export default function AuthLayout({ children }: { children: ReactNode }) {
+export default async function AuthLayout({ children }: { children: ReactNode }) {
+  const data = await auth()
+
+  if (data?.user) {
+    redirect('/dashboard')
+  }
+  
   return (
     <div className="grid min-h-screen grid-cols-[60%_1fr]">
       <div className="flex flex-col max-h-screen overflow-y-auto py-16 px-32">

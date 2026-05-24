@@ -166,7 +166,7 @@ export function SignUpForm() {
         label={t("SignUpPage.Form.InputLabel.AcceptTerms")}
       />
 
-      <Button type="submit" disabled={isSubmitting}>
+      <Button type="submit" disabled={isSubmitting} className="cursor-pointer">
         {t("SignUpPage.Form.Buttons.SignUp")}
       </Button>
     </FormProvider>

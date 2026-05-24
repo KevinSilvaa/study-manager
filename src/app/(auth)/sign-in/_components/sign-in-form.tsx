@@ -52,7 +52,7 @@ export function SignInForm() {
           description: t("Toast.SuccessCodes.SignedInSuccessfully"),
         });
 
-        router.push("/");
+        router.push("/dashboard");
       } else {
         switch (signInResponse.error) {
           case ErrorCodes.InvalidCredentials:
@@ -131,7 +131,7 @@ export function SignInForm() {
         </Link> */}
       </div>
 
-      <Button type="submit" disabled={isSubmitting}>
+      <Button type="submit" disabled={isSubmitting} className="cursor-pointer">
         {t("SignInPage.Form.Buttons.SignIn")}
       </Button>
     </FormProvider>

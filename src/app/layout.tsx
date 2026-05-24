@@ -5,9 +5,8 @@ import { cn } from "@/lib/utils";
 import { getLocale, getMessages } from "next-intl/server";
 import { auth } from "auth";
 import { NextIntlClientProvider } from "next-intl";
-import { SessionProvider } from "next-auth/react";
 import { Toaster } from "@/components/ui/sonner";
-import { NextThemesProviderRoot } from "./next-themes-provider-root";
+import { Providers } from "./providers";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -33,14 +32,12 @@ export default async function RootLayout({
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col">
-        <NextThemesProviderRoot>
-          <NextIntlClientProvider locale={locale} messages={messages}>
-            <SessionProvider session={session}>
-              <Toaster />
-              {children}
-            </SessionProvider>
-          </NextIntlClientProvider>
-        </NextThemesProviderRoot>
+        <NextIntlClientProvider locale={locale} messages={messages}>
+          <Providers session={session}>
+            <Toaster />
+            {children}
+          </Providers>
+        </NextIntlClientProvider>
       </body>
     </html>
   );

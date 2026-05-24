@@ -24,6 +24,60 @@ model User {
   @@map("users")
 }
 
+enum SUBJECT {
+  Portuguese
+  English
+  Mathematics
+  Physics
+  Chemistry
+  History
+  Geography
+}
+
+enum PROVIDER {
+  EFOMM
+  EN
+  ESPCEX
+  IME
+  ITA
+  AFA
+  EPCAR
+  EEAR
+  ESA
+  EAM
+  OTHERS
+}
+
+model Question {
+  id            String    @id @default(uuid())
+  title         String
+  subject       SUBJECT
+  provider      PROVIDER
+  answeredRight Boolean
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime? @updatedAt
+
+  attachments Attachment[]
+
+  @@map("questions")
+}
+
+enum ATTACHMENT_TYPE {
+  IMAGE
+}
+
+model Attachment {
+  id         String          @id @default(uuid())
+  questionId String
+  type       ATTACHMENT_TYPE
+  url        String
+  createdAt  DateTime        @default(now())
+
+  question Question @relation(fields: [questionId], references: [id])
+
+  @@map("attachments")
+}
+
 model Token {
   id                String   @id @default(uuid())
   userId            String

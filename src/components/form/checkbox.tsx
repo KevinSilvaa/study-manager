@@ -2,7 +2,7 @@
 
 import { Controller, useFormContext } from "react-hook-form";
 import { Checkbox as NativeCheckbox } from "@/components/ui/checkbox";
-import { Field, FieldLabel } from "../ui/field";
+import { Field, FieldDescription, FieldLabel } from "../ui/field";
 
 type CheckboxProps = {
   id: string;
@@ -18,21 +18,31 @@ export default function Checkbox({ id, name, ...props }: CheckboxProps) {
     <Controller
       name={name}
       control={control}
-      render={({ field }) => (
-        <Field orientation="horizontal">
-          <NativeCheckbox
-            {...props}
-            id={id}
-            name={name}
-            checked={field.value ?? false}
-            onCheckedChange={field.onChange}
-            value={field.value}
-            onBlur={field.onBlur}
-            disabled={field.disabled}
-          />
+      render={({ field, fieldState: { error } }) => (
+        <div className="flex flex-col gap-2">
+          <Field orientation="horizontal">
+            <NativeCheckbox
+              {...props}
+              id={id}
+              name={name}
+              checked={field.value ?? false}
+              onCheckedChange={field.onChange}
+              value={field.value}
+              onBlur={field.onBlur}
+              disabled={field.disabled}
+            />
 
-          {props.label && <FieldLabel htmlFor={id}>{props.label}</FieldLabel>}
-        </Field>
+            {props.label && <FieldLabel htmlFor={id}>{props.label}</FieldLabel>}
+          </Field>
+
+          <Field>
+            {error && (
+              <FieldDescription className="text-destructive text-xs">
+                {error.message}
+              </FieldDescription>
+            )}
+          </Field>
+        </div>
       )}
     />
   );
