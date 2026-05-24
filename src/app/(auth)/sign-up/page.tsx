@@ -11,7 +11,7 @@ export default async function SignUpPage() {
       <div className="flex flex-col gap-8 mt-20">
         <div className="flex flex-col gap-8">
           <div className="flex flex-col gap-1.5">
-            <h1 className="text-[28px] font-semibold leading-[42px] text-brand">
+            <h1 className="text-[28px] font-semibold leading-10.5 text-brand">
               {t("SignUpPage.SignUpAccount")}
             </h1>
             <span className="text-sm">

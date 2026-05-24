@@ -5,7 +5,6 @@ import { FormProvider } from "@/components/form/form-provider";
 import { Input } from "@/components/form/input";
 import { Button } from "@/components/ui/button";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Lock, Mail, Phone, User } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";

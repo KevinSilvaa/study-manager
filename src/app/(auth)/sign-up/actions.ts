@@ -1,9 +1,10 @@
 'use server'
 
-import { prisma } from "prisma/prisma";
 import type { SignUpFormSchema } from "./_components/sign-up-form";
 import { ErrorCodes } from "@/utils/error-codes";
 import { hash } from "bcryptjs";
+import { AuthError } from "@auth/core/errors";
+import prisma from "prisma/prisma";
 
 export async function signUpAction(formValues: SignUpFormSchema) {
   try {
@@ -23,12 +24,13 @@ export async function signUpAction(formValues: SignUpFormSchema) {
 
     const passwordHashed = await hash(formValues.password, 6)
 
+    console.log(formValues)
+
     await prisma.user.create({
       data: {
         username: formValues.name,
         email: formValues.email,
         password: passwordHashed,
-        phone: formValues.phone,
       }
     })
 
@@ -38,7 +40,7 @@ export async function signUpAction(formValues: SignUpFormSchema) {
       error: null
     }
   } catch (error) {
-    if (error instanceof Error) {
+    if (error instanceof AuthError) {
       return {
         success: false,
         message: null,

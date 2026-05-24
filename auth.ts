@@ -1,9 +1,9 @@
 import NextAuth from "next-auth"
 import Credentials from "next-auth/providers/credentials"
-import { prisma } from "./prisma/prisma"
 import { compare } from "bcryptjs"
 import { ErrorCodes } from "@/utils/error-codes"
-import { PrismaAdapter } from "@next-auth/prisma-adapter"
+import { AuthError } from "@auth/core/errors"
+import prisma from "prisma/prisma"
 
 declare module "next-auth" {
   interface Session {
@@ -16,7 +16,6 @@ declare module "next-auth" {
 }
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
-  adapter: PrismaAdapter(prisma),
   session: {
     strategy: 'jwt',
     maxAge: 10 * 60, // 10 min
@@ -29,7 +28,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         password: { label: "Password", type: "password" },
       },
       authorize: async (credentials) => {
-        if (!credentials.email || !credentials.password) {
+        if (!credentials?.email || !credentials.password) {
           return null
         }
 
@@ -43,7 +42,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         })
 
         if (!user) {
-          throw new Error('Invalid credentials!', {
+          throw new AuthError('Invalid credentials!', {
             cause: ErrorCodes.InvalidCredentials,
           })
         }
@@ -51,7 +50,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         const passwordMatch = await compare(password, user.password)
 
         if (!passwordMatch) {
-          throw new Error('Invalid credentials!', {
+          throw new AuthError('Invalid credentials!', {
             cause: ErrorCodes.InvalidCredentials,
           })
         }

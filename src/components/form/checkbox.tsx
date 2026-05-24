@@ -11,7 +11,7 @@ type CheckboxProps = {
   required?: boolean;
 };
 
-export default function Checkbox({ id, name, label, ...props }: CheckboxProps) {
+export default function Checkbox({ id, name, ...props }: CheckboxProps) {
   const { control } = useFormContext();
 
   return (
@@ -24,14 +24,14 @@ export default function Checkbox({ id, name, label, ...props }: CheckboxProps) {
             {...props}
             id={id}
             name={name}
-            checked={field.value}
-            onChange={field.onChange}
+            checked={field.value ?? false}
+            onCheckedChange={field.onChange}
             value={field.value}
             onBlur={field.onBlur}
             disabled={field.disabled}
           />
 
-          <FieldLabel htmlFor={id}>{label}</FieldLabel>
+          {props.label && <FieldLabel htmlFor={id}>{props.label}</FieldLabel>}
         </Field>
       )}
     />

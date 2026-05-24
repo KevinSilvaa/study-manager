@@ -1,6 +1,7 @@
 import { LanguageSwitcher } from "@/components/language-switcher";
 import Image from "next/image";
 import type { ReactNode } from "react";
+import authImageUrl from '../../../public/auth-image.png'
 
 export default function AuthLayout({ children }: { children: ReactNode }) {
   return (
@@ -15,7 +16,7 @@ export default function AuthLayout({ children }: { children: ReactNode }) {
 
       <div className="relative size-full max-h-screen">
         <Image
-          src="https://github.com/KevinSilvaa.png"
+          src={authImageUrl}
           alt="Login image"
           fill
           priority

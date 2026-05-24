@@ -19,19 +19,19 @@ export async function signInAction(formValues: SignInFormSchema) {
       message: null,
       error: null,
     }
-  } catch (error) {
-    if (error instanceof Error) {
+  } catch (error: any) {
+      if (error.type === 'CallbackRouteError') {
+        return {
+          success: false,
+          message: null,
+          error: ErrorCodes.InvalidCredentials,
+        };
+      }
+
       return {
         success: false,
         message: null,
-        error: error.cause as unknown as string
-      }
+        error: ErrorCodes.InternalServerError,
+      };
     }
-
-    return {
-      success: false,
-      message: null,
-      error: ErrorCodes.InternalServerError
-    }
-  }
 }
