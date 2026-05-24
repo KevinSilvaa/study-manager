@@ -1,0 +1,65 @@
+{
+  "SignInPage": {
+    "SignInAccount": "Entre em sua conta",
+    "DontHaveAnAccount": "Não tem uma conta?",
+    "CreateNow": "Crie agora",
+    "Form": {
+      "EmailInputPlaceholder": "johndoe@exemplo.com",
+      "PasswordInputPlaceholder": "********",
+      "RememberPassword": "Lembrar senha",
+      "ForgotMyPassword": "Esqueci minha senha",
+      "Buttons": {
+        "SignIn": "Entrar"
+      },
+      "InputLabel": {
+        "Email": "Email",
+        "Password": "Senha"
+      }
+    },
+    "Terms": {
+      "TermsOfUse": "Termos de uso",
+      "PrivacyPolicy": "Política de privacidade"
+    }
+  },
+  "SignUpPage": {
+    "SignUpAccount": "Crie sua conta",
+    "AlreadyHaveAnAccount": "Já tem uma conta?",
+    "SignInNow": "Entrar agora",
+    "Form": {
+      "EmailInputPlaceholder": "johndoe@exemplo.com",
+      "PasswordInputPlaceholder": "Digite sua senha",
+      "PasswordConfirmInputPlaceholder": "Confirme sua senha",
+      "NameInputPlaceholder": "Digite seu nome",
+      "PhoneInputPlaceholder": "Digite seu telefone",
+      "Buttons": {
+        "SignUp": "Criar conta"
+      },
+      "InputLabel": {
+        "Email": "Email",
+        "Password": "Senha",
+        "ConfirmPassword": "Confirmar Senha",
+        "Name": "Nome",
+        "AcceptTerms": "Li e concordo com os termos"
+      }
+    },
+    "Terms": {
+      "TermsOfUse": "Termos de uso",
+      "PrivacyPolicy": "Política de privacidade"
+    }
+  },
+  "Toast": {
+    "Error": "Erro",
+    "Success": "Sucesso",
+    "ErrorCodes": {
+      "UserWithSameEmailAlreadyExists": "Já existe um usuário com este e-mail.",
+      "InvalidCredentials": "Credenciais inválidas.",
+      "Unauthorized": "Não autorizado.",
+      "InternalServerError": "Ocorreu um erro inesperado. Por favor, tente novamente mais tarde.",
+      "UnknownError": "Ocorreu um erro desconhecido. Por favor, tente novamente."
+    },
+    "SuccessCodes": {
+      "SignedUpSuccessfully": "Cadastro realizado com sucesso.",
+      "SignedInSuccessfully": "Login realizado com sucesso."
+    }
+  }
+}

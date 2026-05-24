@@ -1,0 +1,65 @@
+{
+  "SignInPage": {
+    "SignInAccount": "Inicia sesión en tu cuenta",
+    "DontHaveAnAccount": "¿No tienes una cuenta?",
+    "CreateNow": "Crea una ahora",
+    "Form": {
+      "EmailInputPlaceholder": "johndoe@ejemplo.com",
+      "PasswordInputPlaceholder": "********",
+      "RememberPassword": "Recordar contraseña",
+      "ForgotMyPassword": "Olvidé mi contraseña",
+      "Buttons": {
+        "SignIn": "Iniciar sesión"
+      },
+      "InputLabel": {
+        "Email": "Correo electrónico",
+        "Password": "Contraseña"
+      }
+    },
+    "Terms": {
+      "TermsOfUse": "Términos de uso",
+      "PrivacyPolicy": "Política de privacidad"
+    }
+  },
+  "SignUpPage": {
+    "SignUpAccount": "Crea tu cuenta",
+    "AlreadyHaveAnAccount": "¿Ya tienes una cuenta?",
+    "SignInNow": "Inicia sesión ahora",
+    "Form": {
+      "EmailInputPlaceholder": "johndoe@ejemplo.com",
+      "PasswordInputPlaceholder": "Escribe tu contraseña",
+      "PasswordConfirmInputPlaceholder": "Confirma tu contraseña",
+      "NameInputPlaceholder": "Escribe tu nombre",
+      "PhoneInputPlaceholder": "Escribe tu teléfono",
+      "Buttons": {
+        "SignUp": "Registrarse"
+      },
+      "InputLabel": {
+        "Email": "Correo electrónico",
+        "Password": "Contraseña",
+        "ConfirmPassword": "Confirmar Contraseña",
+        "Name": "Nombre",
+        "AcceptTerms": "He leído y acepto los términos"
+      }
+    },
+    "Terms": {
+      "TermsOfUse": "Términos de uso",
+      "PrivacyPolicy": "Política de privacidad"
+    }
+  },
+  "Toast": {
+    "Error": "Error",
+    "Success": "Éxito",
+    "ErrorCodes": {
+      "UserWithSameEmailAlreadyExists": "Ya existe un usuario con este correo electrónico.",
+      "InvalidCredentials": "Credenciales inválidas.",
+      "Unauthorized": "No autorizado.",
+      "InternalServerError": "Ocurrió un error inesperado. Por favor, inténtalo de nuevo más tarde.",
+      "UnknownError": "Ocurrió un error desconocido. Por favor, inténtalo de nuevo."
+    },
+    "SuccessCodes": {
+      "SignedUpSuccessfully": "Registro exitoso.",
+      "SignedInSuccessfully": "Inicio de sesión exitoso."
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "SignInPage": {
+    "SignInAccount": "Sign in to your account",
+    "DontHaveAnAccount": "Don't have an account?",
+    "CreateNow": "Create now",
+    "Form": {
+      "EmailInputPlaceholder": "johndoe@example.com",
+      "PasswordInputPlaceholder": "********",
+      "RememberPassword": "Remember password",
+      "ForgotMyPassword": "Forgot my password",
+      "Buttons": {
+        "SignIn": "Sign in"
+      },
+      "InputLabel": {
+        "Email": "Email",
+        "Password": "Password"
+      }
+    },
+    "Terms": {
+      "TermsOfUse": "Terms of use",
+      "PrivacyPolicy": "Privacy policy"
+    }
+  },
+  "SignUpPage": {
+    "SignUpAccount": "Sign up your account",
+    "AlreadyHaveAnAccount": "Already have an account?",
+    "SignInNow": "Sign in now",
+    "Form": {
+      "EmailInputPlaceholder": "johndoe@example.com",
+      "PasswordInputPlaceholder": "Type your password",
+      "PasswordConfirmInputPlaceholder": "Confirm your password",
+      "NameInputPlaceholder": "Type your name",
+      "PhoneInputPlaceholder": "Type your phone",
+      "Buttons": {
+        "SignUp": "Sign up"
+      },
+      "InputLabel": {
+        "Email": "Email",
+        "Password": "Password",
+        "ConfirmPassword": "Confirm Password",
+        "Name": "Name",
+        "AcceptTerms": "I have read and I agree to the terms"
+      }
+    },
+    "Terms": {
+      "TermsOfUse": "Terms of use",
+      "PrivacyPolicy": "Privacy policy"
+    }
+  },
+  "Toast": {
+    "Error": "Error",
+    "Success": "Success",
+    "ErrorCodes": {
+      "UserWithSameEmailAlreadyExists": "User with same email already exists.",
+      "InvalidCredentials": "Invalid Credentials.",
+      "Unauthorized": "Unauthorized.",
+      "InternalServerError": "An unexpected error occurred. Please try again later.",
+      "UnknownError": "An unknown error occurred. Please try again."
+    },
+    "SuccessCodes": {
+      "SignedUpSuccessfully": "Signed up successfully.",
+      "SignedInSuccessfully": "Signed in successfully."
+    }
+  }
+}
